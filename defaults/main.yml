@@ -1,0 +1,5 @@
+---
+# Default Variables for InfluxDB install
+# all variables are prefixed with "influxdb_"
+influxdb_name: influxdb
+influxdb_version: latest

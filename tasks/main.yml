@@ -1,0 +1,5 @@
+---
+- name: Install InfluxDB
+  yum:
+    name: "{{ influxdb_name }}"
+    state: "{{ influxdb_version }}"
