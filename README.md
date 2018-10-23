@@ -13,7 +13,7 @@ Role Variables
 
 This role currently has the following variables that can be overridden within your playbook.
 
-```
+```yaml
 influxdb_name: influxdb # Package name to install
 influxdb_version: latest # Version of the influxDB to install.
 ```

@@ -15,4 +15,4 @@ galaxy_info:
     - influxdata
     - server
 dependencies:
-  - { role: toilops.influxdata-repo }
+  - { role: toilops.influxdata_repo }
