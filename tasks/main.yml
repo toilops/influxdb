@@ -3,3 +3,4 @@
   yum:
     name: "{{ influxdb_name }}"
     state: "{{ influxdb_version }}"
+  when: ansible_os_family == "RedHat"
