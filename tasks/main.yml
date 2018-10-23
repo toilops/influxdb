@@ -4,3 +4,24 @@
     name: "{{ influxdb_name }}"
     state: "{{ influxdb_version }}"
   when: ansible_os_family == "RedHat"
+
+- name: Create conf directories
+  file:
+    path: "{{ influxdb_conf_path }}"
+    state: directory
+    owner: "{{ influxdb_user }}"
+    group: "{{ influxdb_group }}"
+
+- name: Setup Influxdb configurations
+  template:
+    src: "{{ influxdb_conf_template }}"
+    dest: "{{ influxdb_conf_path }}"
+    mode: 0644
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+
+- name: Start Influxdata
+  service:
+    name: "{{ influxdb_name }}"
+    state: started
+    enabled: yes

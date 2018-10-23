@@ -3,3 +3,13 @@
 # all variables are prefixed with "influxdb_"
 influxdb_name: influxdb
 influxdb_version: latest
+influxdb_user: root
+influxdb_group: root
+influxdb_conf_path: /etc/influxdb
+influxdb_conf_template: templates/influxdb.conf.j2
+influxdb_conf:
+  monitor_database: "_internal"
+  monitor_interval: "10s"
+  monitor_enabled: true
+  http_enabled: true
+  http_bind_address: ":8086"

@@ -16,6 +16,16 @@ This role currently has the following variables that can be overridden within yo
 ```yaml
 influxdb_name: influxdb # Package name to install
 influxdb_version: latest # Version of the influxDB to install.
+influxdb_user: root # User that will be running and owning the influxdb daemon
+influxdb_group: root # User group that will be running and owning the influxdb daemon
+influxdb_conf_path: /etc/influxdb # Influxdb configuration directory
+influxdb_conf_template: templates/influxdb.conf.j2 # Template to be used during creation of the influxdb.conf file
+influxdb_conf: # Dictionary used within the template.
+  monitor_database: "_internal"
+  monitor_interval: "10s"
+  monitor_enabled: true
+  http_enabled: true
+  http_bind_address: ":8086"
 ```
 
 Dependencies
